@@ -79,7 +79,7 @@ fun CreateCard(name: String) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                CreateUserProfile(modifier = Modifier.size(50.dp))
+                CreateUserProfile()
                 Divider()
                 CustomerInfo()
                 Button(onClick = {
@@ -144,7 +144,7 @@ private fun CreateUserProfile(modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.ic_baseline_perm_identity_24),
             contentDescription = "Profile Image",
-            modifier = modifier.size(135.dp),
+            modifier = modifier.size(100.dp),
             contentScale = ContentScale.Crop
         )
 
@@ -159,12 +159,12 @@ fun Content() {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .padding(10.dp)
+
     )
     {
         Surface(
             modifier = Modifier
-                .padding(10.dp)
+                .padding(5.dp)
                 .fillMaxHeight()
                 .fillMaxWidth(),
             shape = RoundedCornerShape(corner = CornerSize(6.dp)),
@@ -193,16 +193,18 @@ fun Portfolio(data: List<String>) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp), shape = RectangleShape, elevation = 5.dp
+                    .padding(10.dp),
+                shape = RoundedCornerShape(corner = CornerSize(15.dp)),
+                elevation = 5.dp
             ) {
                 Row(
                     modifier = Modifier
-                        .padding(8.dp)
+                        .padding(5.dp)
                         .background(MaterialTheme.colors.surface)
-                        .padding(16.dp)
+
 
                 ) {
-                    CreateUserProfile()
+                    CreateUserProfile(modifier = Modifier.size(50.dp))
                     Column(
                         modifier = Modifier
                             .padding(5.dp)
